@@ -18,8 +18,10 @@
   }
 }
 
-.site-wrapper {
-    overflow-x: hidden;
+
+html, body {
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .site-header .main-menu {
