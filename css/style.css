@@ -18,6 +18,10 @@
   }
 }
 
+.site-wrapper {
+    overflow-x: hidden;
+}
+
 .site-header .main-menu {
   margin: 0 -18px;
 }
@@ -1101,6 +1105,10 @@
 
 .pricing-card .card-head {
   padding-bottom: 18px;
+}
+
+.pricing-card .card-head h2 {
+  white-space: nowrap;
 }
 
 .pricing-card .card-head h6 {
