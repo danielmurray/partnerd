@@ -24,6 +24,8 @@ $('document').ready(function() {
     e.preventDefault();
     const email = $('#email-input').val();
     const timestamp = Date.now();
+    $('#submit-email').text('Sending...');
+    $('#submit-email').css("background", "grey");
     $.getJSON("https://ipinfo.io/json", function(data) {
       $.ajax({
         url: url,
@@ -52,6 +54,8 @@ $('document').ready(function() {
     e.preventDefault();
     const email = $('#email-input2').val();
     const timestamp = Date.now();
+    $('#submit-email').text('Sending...');
+    $('#submit-email').css("background", "grey");
     $.getJSON("https://ipinfo.io/json", function(data) {
       $.ajax({
         url: url,
