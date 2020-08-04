@@ -24,7 +24,8 @@ $('document').ready(function() {
     e.preventDefault();
     const email = $('#email-input').val();
     const timestamp = Date.now();
-    $.getJSON('https://www.geoplugin.net/json.gp', function(data) {
+    $.getJSON("https://ipinfo.io/json", function(data) {
+      console.log(data)
       $.ajax({
         url: url,
         method: "GET",
@@ -46,7 +47,7 @@ $('document').ready(function() {
     e.preventDefault();
     const email = $('#email-input2').val();
     const timestamp = Date.now();
-    $.getJSON('https://www.geoplugin.net/json.gp', function(data) {
+    $.getJSON("https://ipinfo.io/json", function(data) {
       $.ajax({
         url: url,
         method: "GET",
