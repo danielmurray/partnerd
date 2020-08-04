@@ -25,7 +25,6 @@ $('document').ready(function() {
     const email = $('#email-input').val();
     const timestamp = Date.now();
     $.getJSON("https://ipinfo.io/json", function(data) {
-      console.log(data)
       $.ajax({
         url: url,
         method: "GET",
