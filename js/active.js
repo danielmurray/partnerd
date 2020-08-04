@@ -24,7 +24,7 @@ $('document').ready(function() {
     e.preventDefault();
     const email = $('#email-input').val();
     const timestamp = Date.now();
-    $.getJSON('http://www.geoplugin.net/json.gp', function(data) {
+    $.getJSON('https://www.geoplugin.net/json.gp', function(data) {
       $.ajax({
         url: url,
         method: "GET",
