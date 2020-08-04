@@ -38,6 +38,12 @@ $('document').ready(function() {
         $('#submit-email').remove();
         $('#email-input').remove();
         $('#success-message').show();
+
+        ga('send', 'event', 'Signup', 'Completed', email)
+        FS.identify(email, {
+          displayName: email,
+          email,
+        });
       });
     });
   });
@@ -60,6 +66,12 @@ $('document').ready(function() {
         $('#submit-email2').remove();
         $('#email-input2').remove();
         $('#success-message2').show();
+
+        ga('send', 'event', 'Signup', 'Completed', email)
+        FS.identify(email, {
+          displayName: email,
+          email,
+        });
       });
     });
   });
