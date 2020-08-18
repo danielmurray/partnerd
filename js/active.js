@@ -79,6 +79,44 @@ $('document').ready(function() {
       });
     });
   });
+
+  function getDomPath(el) {
+    var stack = [];
+    while ( el.parentNode != null ) {
+      var sibCount = 0;
+      var sibIndex = 0;
+      for ( var i = 0; i < el.parentNode.childNodes.length; i++ ) {
+        var sib = el.parentNode.childNodes[i];
+        if ( sib.nodeName == el.nodeName ) {
+          if ( sib === el ) {
+            sibIndex = sibCount;
+          }
+          sibCount++;
+        }
+      }
+      if ( el.hasAttribute('id') && el.id != '' ) {
+        stack.unshift(el.nodeName.toLowerCase() + '#' + el.id);
+      } else if ( sibCount > 1 ) {
+        stack.unshift(el.nodeName.toLowerCase() + ':eq(' + sibIndex + ')');
+      } else {
+        stack.unshift(el.nodeName.toLowerCase());
+      }
+      el = el.parentNode;
+    }
+
+    return stack.slice(1); // removes the html element
+  }
+
+  $('body').on('click', function(event) {
+    const thing = event.target;
+    fbq('track', 'Click', { element: getDomPath(thing) });
+  });
+
+  let i = 1;
+  setInterval(() => {
+    fbq('track', 'View', { time: i * 30 });
+    i++;
+  }, 30000)
 });
 
 //======>  Mobile Menu Activation
