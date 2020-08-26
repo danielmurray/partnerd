@@ -113,7 +113,7 @@ $('document').ready(function() {
   });
 
   let i = 1;
-  setInterval(() => {
+  setTimeout(() => {
     fbq('track', 'View', { time: i * 30 });
     i++;
   }, 30000)
